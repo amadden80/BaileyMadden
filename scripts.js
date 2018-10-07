@@ -74,5 +74,5 @@ window.onload = function() {
     circle.appendChild(circleTextLine("6.7.19"));
 
     body.appendChild(circle);
-  }, 6000);
+  }, 5000);
 };
