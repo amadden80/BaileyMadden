@@ -36,9 +36,7 @@ body {
   top: -38px;
   left: 85px;
   background-color: transparent;
-  transition: top 2s, background-color 2s;
-  /* border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%; */
+  transition: top 2s, border-color 2s, border-width 1s, left 1s;
   width: 0;
   height: 0;
   border-style: solid;
