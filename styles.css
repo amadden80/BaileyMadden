@@ -1,110 +1,163 @@
 body {
-  height: 100vh;
+  box-sizing: border-box;
   width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  /* transform: rotate(25deg); */
-  overflow: hidden;
+  font-family: "Libre Baskerville", serif;
+  overflow-x: hidden;
 }
 
-.box {
+.navigation {
+  background-color: white;
+  font-size: 0.7em;
+  color: gray;
+  position: fixed;
+  left: 0px;
+  top: 0;
+  width: 90px;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  width: 33.3%;
-  position: relative;
-  /* border: 1px solid black; */
+  z-index: 6;
 }
 
-.horz-box {
+.navigation .location {
+  font-style: italic;
+  background-color: unset;
+  padding-right: 4px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.navigation .dot {
+  position: fixed;
+  top: -38px;
+  left: 85px;
+  background-color: transparent;
+  transition: top 2s, background-color 2s;
+  /* border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%; */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #dfe3eb transparent transparent;
+}
+.navigation .bar {
+  width: 90px;
+  border-bottom: 1px solid lightgray;
+}
+
+.stage {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  padding-left: 95px;
+}
+
+.frame {
+  position: relative;
+  height: 100vh;
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-column {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.welcome {
+  background-color: #dfe3eb;
+}
+
+.background-image {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 10;
+  top: 0px;
+  left: 0px;
 }
 
-.vert-box {
-  display: flex;
-  justify-content: space-around;
+.welcome .background {
+  background: url("./images/background-inspired-by-wallpaper.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
-
-  z-index: 10;
+  z-index: 4;
+  opacity: 1;
 }
 
-@keyframes grow-bar-width {
-  0% {
-    height: 0%;
-    background-color: grey;
-  }
-  50% {
-    height: 100%;
-    background-color: Black;
-  }
-  100% {
-    height: 0%;
-    background-color: grey;
-  }
+.where {
+  background-color: #f5918e;
 }
 
-.vert-bar {
-  animation-delay: 1s;
-  animation-timing-function: linear;
-  animation-duration: 3s;
-  animation-name: grow-bar-width;
-  width: 1px;
-  height: 0%;
-  background-color: rgb(24, 24, 24);
+.guide {
+  background-color: #f8bf9d;
 }
 
-@keyframes grow-bar-height {
-  00% {
-    width: 0%;
-    background-color: grey;
-  }
-  50% {
-    width: 100%;
-    background-color: black;
-  }
+.registry {
+  background-color: #697e95;
 }
 
-.horz-bar {
-  animation-delay: 1s;
-  animation-timing-function: linear;
-  animation-duration: 3s;
-  animation-name: grow-bar-height;
-  height: 1px;
-  width: 0%;
-  background-color: rgb(31, 31, 31);
+.our-logo-which-includes-date {
+  background: url("./images/our-logo-which-includes-date.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 350px;
+  height: 100vh;
 }
 
-@keyframes circle {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+.our-logo-which-includes-date-white {
+  background: url("./images/our-logo-which-includes-date-white.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 350px;
+  height: 100vh;
+  width: 100%;
 }
 
-.circle {
-  font-family: monospace;
-  font-size: 1.5em;
-  animation-timing-function: linear;
-  animation-duration: 1s;
-  animation-name: circle;
-  width: 50vh;
-  height: 50vh;
-  color: white;
-  background-color: rgb(31, 31, 31);
-  border-radius: 50%;
-  margin-top: 25vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
+.standing-in-the-street {
+  background: url("./images/standing-in-the-street.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.sitting-on-the-stoop {
+  background: url("./images/sitting-on-the-stoop.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.sitting-at-the-restaurant-where-we-met {
+  background: url("./images/sitting-at-the-restaurant-where-we-met.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }

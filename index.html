@@ -5,12 +5,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bailey - Madden</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            /* transform: rotate(25deg); */
+            overflow: hidden;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+            width: 33.3%;
+            position: relative;
+            /* border: 1px solid black; */
+        }
+
+        .horz-box {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .vert-box {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+
+            z-index: 10;
+        }
+
+        @keyframes grow-bar-width {
+            0% {
+                height: 0%;
+                background-color: grey;
+            }
+
+            50% {
+                height: 100%;
+                background-color: Black;
+            }
+
+            100% {
+                height: 0%;
+                background-color: grey;
+            }
+        }
+
+        .vert-bar {
+            animation-delay: 1s;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+            animation-name: grow-bar-width;
+            width: 1px;
+            height: 0%;
+            background-color: rgb(24, 24, 24);
+        }
+
+        @keyframes grow-bar-height {
+            00% {
+                width: 0%;
+                background-color: grey;
+            }
+
+            50% {
+                width: 100%;
+                background-color: black;
+            }
+        }
+
+        .horz-bar {
+            animation-delay: 1s;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+            animation-name: grow-bar-height;
+            height: 1px;
+            width: 0%;
+            background-color: rgb(31, 31, 31);
+        }
+
+        @keyframes circle {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .circle {
+            font-family: monospace;
+            font-size: 1.5em;
+            animation-timing-function: linear;
+            animation-duration: 1s;
+            animation-name: circle;
+            width: 50vh;
+            height: 50vh;
+            color: white;
+            background-color: rgb(31, 31, 31);
+            border-radius: 50%;
+            margin-top: 25vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
 
-    <script src="scripts.js"></script>
+    <script>
+        function generateBoxOfBars(numVert, numHorz) {
+            var verts = (numVert + "").split("").map(d => parseInt(d));
+            var horzs = (numHorz + "").split("").map(d => parseInt(d));
+
+            const box = document.createElement("div");
+            box.className = "box";
+
+            for (let i = 0; i < verts.length; i++) {
+                const numVert = verts[i];
+                const vertBox = document.createElement("div");
+                vertBox.className = "vert-box";
+                vertBox.style = `width:${100 / verts.length}%`;
+                for (let i = 0; i < numVert; i++) {
+                    const bar = document.createElement("div");
+                    bar.className = "vert-bar";
+
+                    setTimeout(() => {
+                        vertBox.appendChild(bar);
+                    }, i * 100);
+                }
+                box.appendChild(vertBox);
+            }
+
+            const horzBox = document.createElement("div");
+            horzBox.className = "horz-box";
+
+            for (let i = 0; i < horzs.length; i++) {
+                const numhorz = horzs[i];
+                const horzBox = document.createElement("div");
+                horzBox.className = "horz-box";
+                horzBox.style = `height:${100 / horzs.length}%;top:${(100 / horzs.length) *
+                    i}%`;
+                for (let i = 0; i < numhorz; i++) {
+                    const bar = document.createElement("div");
+                    bar.className = "horz-bar";
+                    setTimeout(() => {
+                        horzBox.appendChild(bar);
+                    }, i * 100);
+                }
+                box.appendChild(horzBox);
+            }
+            return box;
+        }
+
+        window.onload = function () {
+            // Lines
+            const body = document.querySelector("body");
+
+            const linesGroups = [
+                generateBoxOfBars(6, 11),
+                generateBoxOfBars(7, 8),
+                generateBoxOfBars(19, 15)
+            ];
+            linesGroups.forEach(group => {
+                body.appendChild(group);
+            });
+
+            setTimeout(() => {
+                linesGroups.forEach(group => {
+                    body.removeChild(group);
+                });
+
+                const circle = document.createElement("div");
+                circle.className = "circle";
+
+                function circleTextLine(text) {
+                    const circleT = document.createElement("p");
+                    circleT.className = "circle-text";
+                    circleT.innerText = text;
+                    return circleT;
+                }
+
+                circle.appendChild(circleTextLine("Save The Date"));
+                circle.appendChild(circleTextLine("6.7.19"));
+
+                body.appendChild(circle);
+            }, 5000);
+        };
+
+    </script>
 </body>
 
 </html>
