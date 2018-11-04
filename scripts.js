@@ -33,7 +33,7 @@ var isVisable = function(el) {
 
   var viewport = document.documentElement.clientHeight;
 
-  return isBetween(elTB.top, viewport * -0.9, viewport * 0.9);
+  return isBetween(elTB.top, viewport * -0.51, viewport * 0.51);
 };
 
 window.pauseLocationScanning = false;
@@ -65,41 +65,68 @@ function setLocationHandlers() {
 
 window.currentSecion = ".welcome";
 let discoverTab = function(dot) {
-  [".welcome", ".guide", ".where", ".registry"].forEach(function(section) {
+  [
+    ".welcome",
+    ".picture-01",
+    ".guide",
+    ".picture-02",
+    ".where",
+    ".picture-03",
+    ".registry"
+  ].forEach(function(section) {
     if (isVisable(document.body.querySelector(`.stage ${section}`))) {
       if (window.currentSecion != section) {
         window.currentSecion = section;
         var vTb = getTopBottom(
           document.body.querySelector(`.navigation ${section}`)
         );
-        var color;
+        var color, left, borderWidth;
         switch (section) {
           case ".welcome":
             color = "#dfe3eb";
+            left = "85px";
+            borderWidth = "10px 10px 10px 0";
+            break;
+          case ".picture-01":
+            color = "transparent";
+            left = "95px";
+            borderWidth = "0 0 0 0";
             break;
           case ".where":
             color = "#f5918e";
+            left = "85px";
+            borderWidth = "10px 10px 10px 0";
+            break;
+          case ".picture-02":
+            color = "transparent";
+            left = "95px";
+            borderWidth = "0 0 0 0";
             break;
           case ".guide":
             color = "#f8bf9d";
+            left = "85px";
+            borderWidth = "10px 10px 10px 0";
+            break;
+          case ".picture-03":
+            color = "transparent";
+            left = "95px";
+            borderWidth = "0 0 0 0";
             break;
           case ".registry":
             color = "#697e95";
+            left = "85px";
+            borderWidth = "10px 10px 10px 0";
             break;
           default:
             break;
         }
 
-        dot.style.borderWidth = "0 0 0 0";
-        dot.style.left = "95px";
-        setTimeout(() => {
-          dot.style.borderWidth = "10px 10px 10px 0";
-          dot.style.left = "85px";
-        }, 1000);
+        dot.style.borderWidth = borderWidth;
+        dot.style.left = left;
 
         dot.style.borderColor = `transparent ${color} transparent transparent`;
 
-        dot.style.top = vTb.top + "px";
+        dot.style.top = vTb.top + 5 + "px";
       }
     }
   });
