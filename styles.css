@@ -1,3 +1,8 @@
+/* html {
+  height: 100vh;
+  min-height: 100%;
+} */
+
 body {
   box-sizing: border-box;
   width: 100vw;
@@ -24,11 +29,11 @@ body {
   font-style: italic;
   background-color: unset;
   padding-right: 4px;
-  /* height: 10%; */
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  transition: color 2s;
 }
 
 .navigation .dot {

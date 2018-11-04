@@ -37,14 +37,16 @@ var isVisable = function(el) {
 };
 
 window.pauseLocationScanning = false;
+window.currentSection = null;
+
 function setLocationHandlers() {
   [".welcome", ".where", ".guide", ".registry"].forEach(function(section) {
     (function() {
-      let nav = document.body.querySelector(`.navigation ${section}`);
-      let sectionScoped = section;
+      var nav = document.body.querySelector(`.navigation ${section}`);
+      var sectionScoped = section;
       nav.addEventListener("click", function(e) {
         window.pauseLocationScanning = true;
-        let sectionEl = document.body.querySelector(`.stage ${sectionScoped}`);
+        var sectionEl = document.body.querySelector(`.stage ${sectionScoped}`);
         var secRect = getTopBottom(sectionEl);
 
         setTimeout(function() {
@@ -63,9 +65,8 @@ function setLocationHandlers() {
   });
 }
 
-window.currentSecion = ".welcome";
-let discoverTab = function(dot) {
-  [
+var discoverTab = function(dot) {
+  var navSections = [
     ".welcome",
     ".picture-01",
     ".guide",
@@ -73,63 +74,27 @@ let discoverTab = function(dot) {
     ".where",
     ".picture-03",
     ".registry"
-  ].forEach(function(section) {
-    if (isVisable(document.body.querySelector(`.stage ${section}`))) {
-      if (window.currentSecion != section) {
-        window.currentSecion = section;
-        var vTb = getTopBottom(
-          document.body.querySelector(`.navigation ${section}`)
-        );
-        var color, left, borderWidth;
-        switch (section) {
-          case ".welcome":
-            color = "#dfe3eb";
-            left = "85px";
-            borderWidth = "10px 10px 10px 0";
-            break;
-          case ".picture-01":
-            color = "transparent";
-            left = "95px";
-            borderWidth = "0 0 0 0";
-            break;
-          case ".where":
-            color = "#f5918e";
-            left = "85px";
-            borderWidth = "10px 10px 10px 0";
-            break;
-          case ".picture-02":
-            color = "transparent";
-            left = "95px";
-            borderWidth = "0 0 0 0";
-            break;
-          case ".guide":
-            color = "#f8bf9d";
-            left = "85px";
-            borderWidth = "10px 10px 10px 0";
-            break;
-          case ".picture-03":
-            color = "transparent";
-            left = "95px";
-            borderWidth = "0 0 0 0";
-            break;
-          case ".registry":
-            color = "#697e95";
-            left = "85px";
-            borderWidth = "10px 10px 10px 0";
-            break;
-          default:
-            break;
-        }
-
-        dot.style.borderWidth = borderWidth;
-        dot.style.left = left;
-
-        dot.style.borderColor = `transparent ${color} transparent transparent`;
-
-        dot.style.top = vTb.top + 5 + "px";
-      }
-    }
+  ].map(function(section) {
+    return {
+      nav: document.body.querySelector(`.navigation ${section}`),
+      section: document.body.querySelector(`.stage ${section}`)
+    };
   });
+
+  var currentSection = navSections.filter(function(navSection) {
+    return isVisable(navSection.section);
+  })[0];
+
+  if (window.currentSection != currentSection) {
+    window.currentSection = currentSection;
+    navSections.forEach(function(navSection) {
+      if (navSection == window.currentSection) {
+        navSection.nav.style.color = "#f5918e";
+      } else {
+        navSection.nav.style.color = "grey";
+      }
+    });
+  }
 };
 
 window.onload = function() {
@@ -143,13 +108,58 @@ window.onload = function() {
     }, 0);
   }, 100);
 
-  //   window.onscroll = function() {
-  //     discoverTabDebounced();
-  //   };
-
   setInterval(function() {
     if (!window.pauseLocationScanning) {
       discoverTabDebounced();
     }
   }, 250);
 };
+
+// var vTb = getTopBottom(
+//   document.body.querySelector(`.navigation ${section}`)
+// );
+// var color, left, borderWidth;
+// switch (section) {
+//   case ".welcome":
+//     color = "#dfe3eb";
+//     left = "85px";
+//     borderWidth = "10px 10px 10px 0";
+//     break;
+//   case ".picture-01":
+//     color = "transparent";
+//     left = "95px";
+//     borderWidth = "0 0 0 0";
+//     break;
+//   case ".where":
+//     color = "#f5918e";
+//     left = "85px";
+//     borderWidth = "10px 10px 10px 0";
+//     break;
+//   case ".picture-02":
+//     color = "transparent";
+//     left = "95px";
+//     borderWidth = "0 0 0 0";
+//     break;
+//   case ".guide":
+//     color = "#f8bf9d";
+//     left = "85px";
+//     borderWidth = "10px 10px 10px 0";
+//     break;
+//   case ".picture-03":
+//     color = "transparent";
+//     left = "95px";
+//     borderWidth = "0 0 0 0";
+//     break;
+//   case ".registry":
+//     color = "#697e95";
+//     left = "85px";
+//     borderWidth = "10px 10px 10px 0";
+//     break;
+//   default:
+//     break;
+// }
+
+// dot.style.borderWidth = borderWidth;
+// dot.style.left = left;
+
+// dot.style.borderColor = `transparent ${color} transparent transparent`;
