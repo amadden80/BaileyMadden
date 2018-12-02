@@ -171,17 +171,25 @@ window.onload = function() {
 
   var imgs = Array.from(document.getElementsByClassName("selectable-image"));
   var currentHeroIdx = 0;
+  var transitionNumber = 0;
 
   setInterval(function() {
+    transitionNumber++;
+
+    var leaveId = !(transitionNumber % 2) ? "hero-even" : "hero-odd";
+    var changeId = transitionNumber % 2 ? "hero-even" : "hero-odd";
+
     currentHeroIdx++;
     currentHeroIdx = currentHeroIdx % imgs.length;
-    document.getElementById("hero").style.background =
+
+    document.getElementById(changeId).style.background =
       "url(" + imgs[currentHeroIdx].src + ")";
-    document.getElementById("hero").style.backgroundRepeat = "no-repeat";
-    document.getElementById("hero").style.backgroundAttachment = "fixed";
-    document.getElementById("hero").style.backgroundPosition = "center";
-    document.getElementById("hero").style.backgroundSize = "cover";
-    // document.getElementById("hero").style.height = "100vh";
+    document.getElementById(changeId).style.backgroundRepeat = "no-repeat";
+    document.getElementById(changeId).style.backgroundAttachment = "fixed";
+    document.getElementById(changeId).style.backgroundPosition = "center";
+    document.getElementById(changeId).style.backgroundSize = "cover";
+    document.getElementById(changeId).style.opacity = 1;
+    document.getElementById(leaveId).style.opacity = 0;
   }, 3000);
 };
 
