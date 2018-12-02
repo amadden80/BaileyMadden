@@ -1,11 +1,7 @@
-/* html {
-  height: 100vh;
-  min-height: 100%;
-} */
-
 body {
   box-sizing: border-box;
   width: 100vw;
+  width: calc(var(--vw, 1vw) * 100);
   font-family: "Libre Baskerville", serif;
   overflow-x: hidden;
 }
@@ -19,6 +15,7 @@ body {
   top: 0;
   width: 90px;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -26,6 +23,7 @@ body {
 }
 
 .navigation .location {
+  cursor: pointer;
   font-style: italic;
   background-color: unset;
   padding-right: 4px;
@@ -60,9 +58,13 @@ body {
   padding-left: 95px;
 }
 
+.fillvh {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 .frame {
   position: relative;
-  height: 100vh;
 }
 
 .flex {
@@ -108,15 +110,19 @@ body {
 }
 
 .where {
-  background-color: #f5918e;
-}
-
-.guide {
   background-color: #f8bf9d;
 }
 
-.registry {
+.guide {
   background-color: #697e95;
+}
+
+.registry {
+  background-color: #f5918e;
+}
+
+.images {
+  background-color: #3b4559;
 }
 
 .our-logo-which-includes-date {
@@ -124,9 +130,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  z-index: 10;
   background-size: 350px;
   height: 100vh;
-  padding-left: 95px;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .our-logo-which-includes-date-white {
@@ -136,6 +143,7 @@ body {
   background-position: center;
   background-size: 350px;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
 }
 
@@ -146,22 +154,131 @@ body {
   background-position: center;
   background-size: cover;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
-.sitting-on-the-stoop {
-  background: url("./images/sitting-on-the-stoop.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.sitting-at-the-restaurant-where-we-met {
-  background: url("./images/sitting-at-the-restaurant-where-we-met.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
+#myImg:hover {
+  opacity: 0.7;
+}
+
+.picture-modal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #697e95;
+}
+
+.picture-modal-container {
+  padding: 8px;
+}
+
+.picture-modal-container-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#picture-viewer-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+#picture-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+}
+
+#picture-caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.picture-left-right {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+#close-picture-viewer {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#close-picture-viewer:hover,
+#close-picture-viewer:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .stage {
+    padding-left: unset;
+  }
+  .navigation {
+    display: none;
+  }
+  .standing-in-the-street {
+    background-size: contain;
+  }
+  .our-logo-which-includes-date {
+    background-repeat: no-repeat;
+    background-attachment: unset;
+    background-position: center;
+    background-size: 350px;
+    position: absolute;
+    top: 10px;
+  }
+  .standing-in-the-street {
+    display: none;
+  }
+  .our-logo-which-includes-date-white {
+    display: none;
+  }
+  .remove-fillvh {
+    height: unset;
+  }
 }

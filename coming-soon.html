@@ -1,151 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bailey - Madden</title>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+    <title>Bailey - Madden</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
 
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
     <div class="navigation">
-        <!-- <div class="dot"></div> -->
-        <div class="location">
-            <p>
-                <!-- Picture -->
-            </p>
-        </div>
-        <div class="location welcome">
-            <p>L & A</p>
-        </div>
-        <div class="location picture-01">
-            <p class="bar">
-                <!-- bar -->
-            </p>
-        </div>
-        <div class="location where">
-            <p>Where</p>
-        </div>
-        <div class="location picture-02">
-            <p class="bar">
-                <!-- bar -->
-            </p>
-        </div>
-        <div class="location guide">
-            <p>Guide</p>
-        </div>
-        <div class="location picture-03">
-            <p class="bar">
-                <!-- bar -->
-            </p>
-        </div>
-        <div class="location registry">
-            <p>Registry</p>
-        </div>
-        <div class="location">
-            <p class="bar">
-                <!-- bar -->
-            </p>
-        </div>
+      <div class="location"></div>
+      <div class="location welcome"><p>L & A</p></div>
+      <div class="location picture-01"><p class="bar"></p></div>
+      <div class="location where"><p>Where</p></div>
+      <div class="location "><p class="bar"></p></div>
+      <div class="location guide"><p>Guide</p></div>
+      <div class="location "><p class="bar"></p></div>
+      <div class="location registry"><p>Registry</p></div>
+      <div class="location "><p class="bar"></p></div>
+      <div class="location images"><p>Images</p></div>
+      <div class="location"></div>
     </div>
     <div class="stage">
-        <div class="frame welcome">
-            <div class="background-image our-logo-which-includes-date"></div>
-            <div class="background"></div>
+      <div class="frame fillvh welcome">
+        <div
+          class="background-image background-fill our-logo-which-includes-date"
+        ></div>
+        <div class="background"></div>
+      </div>
+      <div class="frame fillvh remove-fillvh picture-01">
+        <div class="background-image standing-in-the-street"></div>
+        <div class="background-image our-logo-which-includes-date-white"></div>
+      </div>
+      <div class="frame fillvh where flex-column">
+        <h2>Where?</h2>
+        <div class="flex"><p>Ceremony - Cocktails - Reception</p></div>
+        <div class="flex">
+          <div class="flex-column">
+            <h3>The Weylin - Brooklyn NYC</h3>
+            <p>[ TODO: a doodle of map ]</p>
+          </div>
         </div>
-        <div class="frame picture-01">
-            <div class="background-image standing-in-the-street"></div>
-            <div class="background-image our-logo-which-includes-date-white"></div>
-        </div>
-        <div class="frame where flex-column">
-            <h2>
-                Where?
-            </h2>
-            <div class="flex">
-                <p>
-                    Ceremony - Cocktails - Reception
-                </p>
+      </div>
 
+      <div class="frame fillvh guide flex-column">
+        <h2>Our Guide</h2>
+        <div class="flex">
+          <div class="flex-column">
+            <h3>Travel</h3>
+            <p>Fly or drive to NYC.</p>
+          </div>
+          <div class="flex-column">
+            <h3>Lodging</h3>
+            <div class="flex-column">
+              <p>Stay somewhere...</p>
+              <div class="flex">
+                <p>Hotel: [ TODO: pick hotel ]</p>
+                <p>Airbnb: [ TODO: pick neighborhood ]/p></p>
+              </div>
             </div>
-            <div class="flex">
-                <div class="flex-column">
-                    <h3>
-                        The Weylin - Brooklyn NYC
-                    </h3>
-                    <p>
-                        [ TODO: a doodle of map ]
-                    </p>
-                </div>
+          </div>
+          <div class="flex-column">
+            <h3>While In Town</h3>
+            <div class="flex-column">
+              <p>See Stuff!</p>
+              <p>[ TODO: make-itinerary ]</p>
             </div>
+          </div>
         </div>
-        <div class="frame picture-02">
-            <div class="background-image sitting-on-the-stoop"></div>
+      </div>
+      <div class="frame fillvh registry registryflex-column flex">
+        <h2>Registry [ TODO: find registry ]</h2>
+      </div>
 
+      <div class="frame fillvh images flex-column">
+        <h2>Engagement Photos</h2>
+        <div id="images-list">
+          <img
+            class="selectable-image"
+            src="images/sitting-at-the-restaurant-where-we-met.jpg"
+            alt="Sitting at the restaurant where we met."
+            style="width:100%;max-width:300px"
+          />
+          <img
+            class="selectable-image"
+            src="images/sitting-on-the-stoop.jpg"
+            alt="Sitting on our stoop."
+            style="width:100%;max-width:300px"
+          />
         </div>
-        <div class="frame guide flex-column">
-            <h2>
-                Our Guide
-            </h2>
-            <div class="flex">
-                <div class="flex-column">
-                    <h3>
-                        Travel
-                    </h3>
-                    <p>
-                        Fly or drive to NYC.
-                    </p>
-                </div>
-                <div class="flex-column">
-                    <h3>
-                        Lodging
-                    </h3>
-                    <div class="flex-column">
-                        <p>
-                            Stay somewhere...
-                        </p>
-                        <div class="flex">
-                            <p>Hotel: [ TODO: pick hotel ]</p>
-                            <p>Airbnb: [ TODO: pick neighborhood ]/p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-column">
-                    <h3>
-                        While In Town
-                    </h3>
-                    <div class="flex-column">
-                        <p>
-                            See Stuff!
-                        </p>
-                        <p>
-                            [ TODO: make-itinerary ]
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="frame  picture-03">
-            <div class="background-image sitting-at-the-restaurant-where-we-met"></div>
 
+        <div id="picture-viewer" class="picture-modal">
+          <div class="picture-modal-container-container">
+            <div class="picture-modal-container">
+              <span id="close-picture-viewer">&times;</span>
+              <div class="flex">
+                <span id="picture-left" class="picture-left-right"><</span>
+                <img id="picture-viewer-content" />
+                <span id="picture-right" class="picture-left-right">></span>
+              </div>
+              <div id="picture-caption"></div>
+            </div>
+          </div>
         </div>
-        <div class="frame registry registryflex-column flex">
-            <h2>
-                Registry [ TODO: find registry ]
-            </h2>
-        </div>
+      </div>
     </div>
 
     <script src="scripts.js"></script>
 
-    <script>
-
-
-    </script>
-</body>
-
+    <script></script>
+  </body>
 </html>

@@ -40,7 +40,9 @@ window.pauseLocationScanning = false;
 window.currentSection = null;
 
 function setLocationHandlers() {
-  [".welcome", ".where", ".guide", ".registry"].forEach(function(section) {
+  [".welcome", ".where", ".guide", ".registry", ".images"].forEach(function(
+    section
+  ) {
     (function() {
       var nav = document.body.querySelector(`.navigation ${section}`);
       var sectionScoped = section;
@@ -70,10 +72,9 @@ var discoverTab = function(dot) {
     ".welcome",
     ".picture-01",
     ".guide",
-    ".picture-02",
     ".where",
-    ".picture-03",
-    ".registry"
+    ".registry",
+    ".images"
   ].map(function(section) {
     return {
       nav: document.body.querySelector(`.navigation ${section}`),
@@ -113,6 +114,59 @@ window.onload = function() {
       discoverTabDebounced();
     }
   }, 250);
+
+  function clickIt(el) {
+    var evObj = document.createEvent("Events");
+    evObj.initEvent("click", true, false);
+    el.dispatchEvent(evObj);
+  }
+
+  var imgs = Array.from(document.getElementsByClassName("selectable-image"));
+  var currentImageIdx = null;
+  function loadImage(idx) {
+    currentImageIdx = idx;
+
+    var img;
+    if (idx < 0) {
+      currentImageIdx = imgs.length - 1;
+      img = imgs[currentImageIdx];
+    } else if (idx > imgs.length - 1) {
+      currentImageIdx = 0;
+      img = imgs[currentImageIdx];
+    }
+
+    img = imgs[currentImageIdx];
+
+    document.getElementById("picture-viewer").style.display = "block";
+    document.getElementById("picture-viewer-content").src = img.src;
+    document.getElementById("picture-caption").innerHTML = img.alt;
+  }
+
+  document.getElementById("picture-left").addEventListener("click", function() {
+    loadImage(currentImageIdx - 1);
+  });
+
+  document
+    .getElementById("picture-right")
+    .addEventListener("click", function() {
+      loadImage(currentImageIdx + 1);
+    });
+
+  for (var index = 0; index < imgs.length; index++) {
+    (function() {
+      var idx = index;
+      var img = imgs[idx];
+      img.addEventListener("click", function(e) {
+        loadImage(idx);
+      });
+    })();
+  }
+
+  document
+    .getElementById("close-picture-viewer")
+    .addEventListener("click", function() {
+      document.getElementById("picture-viewer").style.display = "none";
+    });
 };
 
 // var vTb = getTopBottom(
