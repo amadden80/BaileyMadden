@@ -106,7 +106,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 4;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .where {
@@ -147,7 +147,7 @@ body {
   width: 100%;
 }
 
-.standing-in-the-street {
+.hero {
   background: url("./images/standing-in-the-street.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -261,7 +261,7 @@ body {
   .navigation {
     display: none;
   }
-  .standing-in-the-street {
+  .hero {
     background-size: contain;
   }
   .our-logo-which-includes-date {
@@ -272,7 +272,7 @@ body {
     position: absolute;
     top: 10px;
   }
-  .standing-in-the-street {
+  .hero {
     display: none;
   }
   .our-logo-which-includes-date-white {

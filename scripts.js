@@ -123,6 +123,7 @@ window.onload = function() {
 
   var imgs = Array.from(document.getElementsByClassName("selectable-image"));
   var currentImageIdx = null;
+
   function loadImage(idx) {
     currentImageIdx = idx;
 
@@ -167,6 +168,21 @@ window.onload = function() {
     .addEventListener("click", function() {
       document.getElementById("picture-viewer").style.display = "none";
     });
+
+  var imgs = Array.from(document.getElementsByClassName("selectable-image"));
+  var currentHeroIdx = 0;
+
+  setInterval(function() {
+    currentHeroIdx++;
+    currentHeroIdx = currentHeroIdx % imgs.length;
+    document.getElementById("hero").style.background =
+      "url(" + imgs[currentHeroIdx].src + ")";
+    document.getElementById("hero").style.backgroundRepeat = "no-repeat";
+    document.getElementById("hero").style.backgroundAttachment = "fixed";
+    document.getElementById("hero").style.backgroundPosition = "center";
+    document.getElementById("hero").style.backgroundSize = "cover";
+    // document.getElementById("hero").style.height = "100vh";
+  }, 3000);
 };
 
 // var vTb = getTopBottom(
