@@ -6,7 +6,15 @@
     <title>Bailey - Madden</title>
     <link rel="stylesheet" href="normalize.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+      href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i"
       rel="stylesheet"
     />
     <link
@@ -19,17 +27,19 @@
 
   <body>
     <div class="navigation">
-      <div class="location"></div>
-      <div class="location welcome"><p>L & A</p></div>
+      <div class="location "></div>
+      <div class="location welcome">
+        <p>L</p>
+        <p>&</p>
+        <p>A</p>
+      </div>
       <div class="location picture-01"><p class="bar"></p></div>
-      <div class="location where"><p>Where</p></div>
+      <div class="location where"><p>WHERE</p></div>
       <div class="location "><p class="bar"></p></div>
-      <div class="location guide"><p>Guide</p></div>
+      <div class="location guide"><p>GUIDE</p></div>
       <div class="location "><p class="bar"></p></div>
-      <div class="location registry"><p>Registry</p></div>
-      <div class="location "><p class="bar"></p></div>
-      <div class="location images"><p>Images</p></div>
-      <div class="location"></div>
+      <div class="location registry"><p>REGISTRY</p></div>
+      <div class="location "></div>
     </div>
     <div class="stage">
       <div class="frame fillvh welcome">
@@ -43,18 +53,26 @@
         <div id="hero-odd" class="background-image hero"></div>
         <div class="background-image our-logo-which-includes-date-white"></div>
       </div>
-      <div class="frame fillvh where flex-column">
-        <h2>Where?</h2>
-        <div class="flex"><p>Ceremony - Cocktails - Reception</p></div>
-        <div class="flex">
-          <div class="flex-column">
-            <h3>The Weylin - Brooklyn NYC</h3>
-            <p>[ TODO: a doodle of map ]</p>
-          </div>
-        </div>
+      <div class="frame fillvh flex-column where">
+        <p class="section-title">WHERE</p>
+        <p class="section-headline">The Weylin</p>
+        <p class="section-sub-headline">Brooklyn, New York</p>
+        <p class="section-text">
+          Lauren and Andrew’s ceremony and reception will take place on Friday,
+          June 7th, 2019 at The Weylin in Brooklyn, New York. Located at 175
+          Broadway. More information on time forthcoming.
+        </p>
+        <a
+          class="map-it"
+          href="https://goo.gl/maps/mzxd7fSbo9y"
+          target="__blank"
+        >
+          <p>MAP IT</p>
+        </a>
+        <div class="background"></div>
       </div>
 
-      <div class="frame fillvh guide flex-column">
+      <div class="frame fillvh flex-column guide">
         <h2>Our Guide</h2>
         <div class="flex">
           <div class="flex-column">
@@ -84,7 +102,7 @@
         <h2>Registry [ TODO: find registry ]</h2>
       </div>
 
-      <div class="frame fillvh images flex-column">
+      <div class="frame fillvh  flex-column images" style="display:none;">
         <h2>Engagement Photos</h2>
         <div id="images-list">
           <img
@@ -103,6 +121,12 @@
             class="selectable-image"
             src="images/sitting-on-the-stoop.jpg"
             alt="Sitting on our stoop."
+            style="width:100%;max-width:300px"
+          />
+          <img
+            class="selectable-image"
+            src="images/standing-in-our-local-fort-green-park.jpg"
+            alt="In our local Fort Green Park."
             style="width:100%;max-width:300px"
           />
         </div>

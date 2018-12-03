@@ -40,9 +40,7 @@ window.pauseLocationScanning = false;
 window.currentSection = null;
 
 function setLocationHandlers() {
-  [".welcome", ".where", ".guide", ".registry", ".images"].forEach(function(
-    section
-  ) {
+  [".welcome", ".where", ".guide", ".registry"].forEach(function(section) {
     (function() {
       var nav = document.body.querySelector(`.navigation ${section}`);
       var sectionScoped = section;
@@ -73,8 +71,7 @@ var discoverTab = function(dot) {
     ".picture-01",
     ".guide",
     ".where",
-    ".registry",
-    ".images"
+    ".registry"
   ].map(function(section) {
     return {
       nav: document.body.querySelector(`.navigation ${section}`),
@@ -90,9 +87,9 @@ var discoverTab = function(dot) {
     window.currentSection = currentSection;
     navSections.forEach(function(navSection) {
       if (navSection == window.currentSection) {
-        navSection.nav.style.color = "#f5918e";
+        navSection.nav.style.color = "#3b4559";
       } else {
-        navSection.nav.style.color = "grey";
+        navSection.nav.style.color = "#bbc7d7";
       }
     });
   }
@@ -173,24 +170,26 @@ window.onload = function() {
   var currentHeroIdx = 0;
   var transitionNumber = 0;
 
-  setInterval(function() {
-    transitionNumber++;
+  setTimeout(function() {
+    setInterval(function() {
+      transitionNumber++;
 
-    var leaveId = !(transitionNumber % 2) ? "hero-even" : "hero-odd";
-    var changeId = transitionNumber % 2 ? "hero-even" : "hero-odd";
+      var leaveId = !(transitionNumber % 2) ? "hero-even" : "hero-odd";
+      var changeId = transitionNumber % 2 ? "hero-even" : "hero-odd";
 
-    currentHeroIdx++;
-    currentHeroIdx = currentHeroIdx % imgs.length;
+      currentHeroIdx++;
+      currentHeroIdx = currentHeroIdx % imgs.length;
 
-    document.getElementById(changeId).style.background =
-      "url(" + imgs[currentHeroIdx].src + ")";
-    document.getElementById(changeId).style.backgroundRepeat = "no-repeat";
-    document.getElementById(changeId).style.backgroundAttachment = "fixed";
-    document.getElementById(changeId).style.backgroundPosition = "center";
-    document.getElementById(changeId).style.backgroundSize = "cover";
-    document.getElementById(changeId).style.opacity = 1;
-    document.getElementById(leaveId).style.opacity = 0;
-  }, 3000);
+      document.getElementById(changeId).style.background =
+        "url(" + imgs[currentHeroIdx].src + ")";
+      document.getElementById(changeId).style.backgroundRepeat = "no-repeat";
+      document.getElementById(changeId).style.backgroundAttachment = "fixed";
+      document.getElementById(changeId).style.backgroundPosition = "center";
+      document.getElementById(changeId).style.backgroundSize = "cover";
+      document.getElementById(changeId).style.opacity = 1;
+      document.getElementById(leaveId).style.opacity = 0;
+    }, 5000);
+  }, 2000);
 };
 
 // var vTb = getTopBottom(
