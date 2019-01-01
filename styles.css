@@ -78,19 +78,29 @@ body {
 }
 
 .fillvh {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .frame {
   position: relative;
 }
 
+.guide-options {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.guide-options div {
+  flex: 1;
+  flex-wrap: wrap;
+}
+
 .flex {
   width: 100%;
   display: flex;
   align-content: center;
-  align-items: center;
+
   justify-content: space-around;
 }
 
@@ -141,6 +151,13 @@ body {
   z-index: 20;
 }
 
+.stage .guide p {
+  margin: 0;
+  padding: 15px;
+  color: #f1f1f1;
+  z-index: 20;
+}
+
 .section-title {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -175,6 +192,26 @@ body {
   line-height: 1.25em;
 }
 
+.guide-item {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  max-width: 400px;
+  text-align: center;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  line-height: 1.25em;
+}
+.caption-text {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+  max-width: 400px;
+  text-align: center;
+  font-size: 0.75em;
+  letter-spacing: 0.01em;
+  line-height: 1em;
+}
+
 .where .background {
   background: url("./images/background-weylin-doodle-wedding-yay.png");
   background-repeat: no-repeat;
@@ -187,6 +224,21 @@ body {
   height: 100%;
   z-index: 4;
   opacity: 0.5;
+}
+
+.guide .background {
+  background: url("./images/a-simple-map-of-nyc.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  opacity: 0.3;
 }
 
 .where .map-it {
@@ -207,14 +259,17 @@ body {
 
 .guide {
   background-color: #697e95;
+  justify-content: center;
 }
 
 .registry {
   background-color: #f5918e;
+  justify-content: center;
 }
 
 .images {
   background-color: #3b4559;
+  justify-content: center;
 }
 
 .our-logo-which-includes-date {
@@ -346,7 +401,10 @@ body {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1366px) {
+  .guide .background {
+    background: unset;
+  }
   .stage {
     padding-left: unset;
   }
