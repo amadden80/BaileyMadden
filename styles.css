@@ -299,9 +299,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: center;
-  background-position-y: -5vh;
+  background-position-y: top;
   background-size: cover;
-  height: 105vh;
+  height: 100vh;
   -webkit-transition: opacity 3s; /* Safari */
   transition: opacity 3s;
 }
