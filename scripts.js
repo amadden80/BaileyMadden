@@ -15,13 +15,20 @@ function debounce(func, wait, immediate) {
 }
 
 var getTopBottom = function(el) {
-  var rect = el.getBoundingClientRect();
-  var top = rect.top;
-  var bottom = rect.bottom;
-  return {
-    top: top,
-    bottom: bottom
-  };
+  if (el) {
+    var rect = el.getBoundingClientRect();
+    var top = rect.top;
+    var bottom = rect.bottom;
+    return {
+      top: top,
+      bottom: bottom
+    };
+  } else {
+    return {
+      top: 0,
+      bottom: 0
+    };
+  }
 };
 
 var isBetween = function(value, top, bottom) {
@@ -86,10 +93,12 @@ var discoverTab = function(dot) {
   if (window.currentSection != currentSection) {
     window.currentSection = currentSection;
     navSections.forEach(function(navSection) {
-      if (navSection == window.currentSection) {
-        navSection.nav.style.color = "#3b4559";
-      } else {
-        navSection.nav.style.color = "#bbc7d7";
+      if (navSection && navSection.nav) {
+        if (navSection == window.currentSection) {
+          navSection.nav.style.color = "#3b4559";
+        } else {
+          navSection.nav.style.color = "#bbc7d7";
+        }
       }
     });
   }
@@ -191,52 +200,3 @@ window.onload = function() {
     }, 5000);
   }, 2000);
 };
-
-// var vTb = getTopBottom(
-//   document.body.querySelector(`.navigation ${section}`)
-// );
-// var color, left, borderWidth;
-// switch (section) {
-//   case ".welcome":
-//     color = "#dfe3eb";
-//     left = "85px";
-//     borderWidth = "10px 10px 10px 0";
-//     break;
-//   case ".picture-01":
-//     color = "transparent";
-//     left = "95px";
-//     borderWidth = "0 0 0 0";
-//     break;
-//   case ".where":
-//     color = "#f5918e";
-//     left = "85px";
-//     borderWidth = "10px 10px 10px 0";
-//     break;
-//   case ".picture-02":
-//     color = "transparent";
-//     left = "95px";
-//     borderWidth = "0 0 0 0";
-//     break;
-//   case ".guide":
-//     color = "#f8bf9d";
-//     left = "85px";
-//     borderWidth = "10px 10px 10px 0";
-//     break;
-//   case ".picture-03":
-//     color = "transparent";
-//     left = "95px";
-//     borderWidth = "0 0 0 0";
-//     break;
-//   case ".registry":
-//     color = "#697e95";
-//     left = "85px";
-//     borderWidth = "10px 10px 10px 0";
-//     break;
-//   default:
-//     break;
-// }
-
-// dot.style.borderWidth = borderWidth;
-// dot.style.left = left;
-
-// dot.style.borderColor = `transparent ${color} transparent transparent`;
