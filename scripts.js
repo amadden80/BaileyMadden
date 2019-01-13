@@ -190,13 +190,13 @@ window.onload = function() {
       currentHeroIdx = currentHeroIdx % imgs.length;
 
       document.getElementById(changeId).style.background =
-        "url(" + imgs[currentHeroIdx].src + ")";
+        'url("./images/standing-in-the-street.jpg")';
       document.getElementById(changeId).style.backgroundRepeat = "no-repeat";
       document.getElementById(changeId).style.backgroundAttachment = "fixed";
       document.getElementById(changeId).style.backgroundPositionX = "center";
-      document.getElementById(changeId).style.backgroundPositionY = "top";
+      document.getElementById(changeId).style.backgroundPositionX = "top";
       document.getElementById(changeId).style.backgroundSize = "cover";
-      document.getElementById(changeId).style.height = "100%";
+      document.getElementById(changeId).style.height = "100vh";
       document.getElementById(changeId).style.opacity = 1;
       document.getElementById(leaveId).style.opacity = 0;
     }, 5000);
