@@ -47,7 +47,7 @@ window.pauseLocationScanning = false;
 window.currentSection = null;
 
 function setLocationHandlers() {
-  [".welcome", ".where", ".guide", ".registry"].forEach(function(section) {
+  [".welcome", ".where", ".lodging", ".registry"].forEach(function(section) {
     (function() {
       var nav = document.body.querySelector(`.navigation ${section}`);
       var sectionScoped = section;
@@ -75,8 +75,8 @@ function setLocationHandlers() {
 var discoverTab = function(dot) {
   var navSections = [
     ".welcome",
-    ".picture-01",
-    ".guide",
+    ".image",
+    ".lodging",
     ".where",
     ".registry"
   ].map(function(section) {
@@ -190,7 +190,7 @@ window.onload = function() {
       currentHeroIdx = currentHeroIdx % imgs.length;
 
       document.getElementById(changeId).style.background =
-        'url("./images/standing-in-the-street.jpg")';
+        "url(" + imgs[currentHeroIdx].src + ")";
       document.getElementById(changeId).style.backgroundRepeat = "no-repeat";
       document.getElementById(changeId).style.backgroundAttachment = "fixed";
       document.getElementById(changeId).style.backgroundPositionX = "center";

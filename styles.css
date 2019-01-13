@@ -3,8 +3,10 @@ body {
   width: 100vw;
   width: calc(var(--vw, 1vw) * 100);
   font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
   font-weight: 400;
   overflow-x: hidden;
+  position: relative;
 }
 
 .navigation {
@@ -86,14 +88,19 @@ body {
   position: relative;
 }
 
-.guide-options {
-  width: 100%;
+.lodging-options {
+  padding-top: 5vh;
+  width: 75vw;
   flex-wrap: wrap;
 }
 
-.guide-options div {
+.lodging-options div {
   flex: 1;
   flex-wrap: wrap;
+}
+
+.lodging-options .flex-column {
+  min-height: 325px;
 }
 
 .flex {
@@ -151,7 +158,7 @@ body {
   z-index: 20;
 }
 
-.stage .guide p {
+.stage .lodging p {
   margin: 0;
   padding: 15px;
   color: #f1f1f1;
@@ -160,9 +167,10 @@ body {
 
 .section-title {
   font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
+  font-weight: bold;
+
   font-size: 1.25em;
-  letter-spacing: 0.75em;
+  letter-spacing: 0.5em;
   margin-right: -0.75em !important;
 }
 
@@ -170,7 +178,7 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
   font-size: 3.5em;
-
+  font-style: italic;
   padding-bottom: 5px !important;
 }
 
@@ -192,7 +200,7 @@ body {
   line-height: 1.25em;
 }
 
-.guide-item {
+.lodging-item {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   max-width: 400px;
@@ -226,7 +234,7 @@ body {
   opacity: 0.5;
 }
 
-.guide .background {
+.lodging .background {
   /* background: url("./images/a-simple-map-of-nyc.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -246,24 +254,68 @@ body {
   font-weight: 400;
   margin-top: 10px;
   z-index: 20;
-  letter-spacing: 0.75em;
+  letter-spacing: 0.5em;
   text-align: center;
-  width: 250px;
+  margin-left: 0.3em;
   cursor: pointer;
   text-decoration: none;
-  background-color: white;
 }
+
 .where .map-it p {
+  border: 1px solid #3b4559;
+  font-weight: bold;
+  margin-right: -0.3em;
+}
+
+.where .map-it:hover p {
+  background-color: white;
+  border: 1px solid white;
   color: #f8bf9c;
 }
 
-.guide {
-  background-color: #697e95;
+.lodging-image {
+  flex: 1;
+  display: flex;
   justify-content: center;
+}
+.lodging-image img {
+  width: 200px;
+  height: 200px;
+}
+
+.lodging .travel-link {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  margin-top: 10px;
+  z-index: 20;
+  letter-spacing: 0.5em;
+  margin-left: 0.3em;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  color: white;
+  font-weight: bold;
+}
+
+.lodging .travel-link p {
+  padding-right: 0.3em;
+  border: 1px solid white;
+}
+
+.lodging .travel-link:hover p {
+  background-color: white;
+  color: #3a4356;
+}
+
+.lodging {
+  background-color: #3a4356;
+  justify-content: center;
+  position: relative;
 }
 
 .registry {
-  background-color: #f5918e;
+  background-color: #dce3e3;
   justify-content: center;
 }
 
@@ -327,7 +379,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #697e95;
+  background-color: #3a4356;
 }
 
 .picture-modal-container {
@@ -401,8 +453,14 @@ body {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .lodging-options {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
-  .guide .background {
+  .lodging .background {
     background: unset;
   }
   .stage {
@@ -429,4 +487,52 @@ body {
   .remove-fillvh {
     height: unset;
   }
+}
+
+.modal-backdrop {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #3b4559;
+  opacity: 0.65;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  margin-left: 15vw;
+  margin-top: 15vh;
+  width: 70vw;
+  height: 70vh;
+  z-index: 101;
+  background-color: #3b4559;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.modal .address {
+  text-decoration: none;
+  color: black;
+}
+
+.modal p {
+  margin: 0;
+  padding: 25px;
+}
+
+.modal-content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }

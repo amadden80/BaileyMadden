@@ -35,8 +35,8 @@
       </div>
       <div class="location"><p class="bar"></p></div>
       <div class="location where"><p>WHERE</p></div>
-      <div class="location "><p class="bar"></p></div>
-      <div class="location guide"><p>GUIDE</p></div>
+      <div class="location image"><p class="bar"></p></div>
+      <div class="location lodging"><p>LODGING</p></div>
       <div class="location "><p class="bar"></p></div>
       <div class="location registry"><p>REGISTRY</p></div>
       <div class="location "></div>
@@ -50,7 +50,7 @@
         <div class="background"></div>
       </div>
       <!-- *** IMAGES *** -->
-      <div class="frame fillvh">
+      <div class="frame fillvh image">
         <div id="hero-even" class="background-image hero"></div>
         <div id="hero-odd" class="background-image hero"></div>
         <div class="background-image our-logo-which-includes-date-white"></div>
@@ -75,75 +75,62 @@
         <div class="background"></div>
       </div>
 
-      <!-- *** GUIDE *** -->
-      <div class="frame fillvh flex-column guide">
-        <p class="section-title">GUIDE</p>
-        <p class="section-headline">Brooklyn et al.</p>
-        <p class="section-sub-headline">
-          For those of you traveling to NYC, we wanted to offer a few suggested
-          stops for any leiser/travel time you carve out.
-        </p>
-        <div class="flex fillvw guide-options">
-          <div class="flex-column">
-            <p class="section-title">FOOD</p>
-            <p class="guide-item"></p>
-            <p>"Emily Pizza"</p>
-            <p class="caption-text">
-              Amazing burger. Pizza is great too... but someone at the table
-              should have the burger... (our second date!)
+      <!-- *** lodging *** -->
+      <div class="frame fillvh flex-column lodging">
+        <p class="section-title">LODGING</p>
+        <div class="flex-column fillvw lodging-options">
+          <div class="flex">
+            <div class="lodging-image">
+              <img src="./images/lodging-hotel.png" />
+            </div>
+            <div class="lodging-image">
+              <img src="./images/lodging-airbnb.png" />
+            </div>
+          </div>
+          <div class="flex">
+            <p class="section-headline">Hotel</p>
+            <p class="section-headline">Airbnb</p>
+          </div>
+          <div class="flex">
+            <p class="section-text">
+              We’ve reserved rooms at The Tillary Hotel in Downtown Brooklyn. We
+              will provide transportation to and from the wedding
+              ceremony/reception. Also walking distance to DeKalb Market, Alamo
+              Drafthouse and Brooklyn Bridge Park.
             </p>
-
-            <p class="guide-item">"Chuko Ramen"</p>
-            <p class="caption-text">
-              Some of the most amazing ramen (recommend the miso pork)
-            </p>
-
-            <p class="guide-item">"Uncle Boons"</p>
-            <p class="caption-text">
-              Expect a long wait... so go get a drink near by while waiting
+            <p class="section-text">
+              We love Airbnb for a more authentic introduction to the city. If
+              you’re looking for a more local experience this is a great option.
+              You can find rooms anywhere in the city at all price points. We’ve
+              worked up a neighborhood guide if you’re looking for tips on where
+              to book.
             </p>
           </div>
-          <div class="flex-column">
-            <p class="section-title">DRINKS</p>
-            <p class="guide-item">"Weather Up"</p>
-            <p class="caption-text">
-              UpscaleSpeakeasy Cocktails! This near Chuko... so get on the
-              waiting list at Chuko first...
-            </p>
-            <p class="guide-item">"DSK (Die Stamm Kneipe)"</p>
-            <p class="caption-text">Weiners and Beer. (we're regulars here)</p>
 
-            <p class="guide-item">"Threes Brewing"</p>
-            <p class="caption-text">
-              Nice beer and sandwichs. (an early wedding venue choice)
-            </p>
+          <div class="flex">
+            <a
+              class="travel-link"
+              href="https://www.thetillaryhotel.com/"
+              target="__blank"
+            >
+              <p>BOOK</p>
+            </a>
+            <a
+              class="travel-link"
+              href="https://www.airbnb.com/s/Brooklyn--NY--United-States/home?checkin=2019-06-06&checkout=2019-06-09&adults=2"
+              target="__blank"
+            >
+              <p>SEARCH</p>
+            </a>
           </div>
-          <div class="flex-column">
-            <p class="section-title">TOUR</p>
-            <p class="guide-item">Outside</p>
-            <p class="caption-text">
-              Prospect Park, Brooklyn Bridge Park, The Highline & Central Park
-            </p>
-            <p class="guide-item">Inside</p>
-            <p class="caption-text">
-              The Metropolitan Museum of Art (incredible range of art, HUGE),
-              The Guggenheim (a smaller favorite), One-World-Trade obversavtion
-              deck (amazing view with clear skys)
-            </p>
-          </div>
+
+          <div class="background"></div>
         </div>
-        <div class="background"></div>
       </div>
       <!-- *** REGISTRY  *** -->
       <div class="frame fillvh flex-column registry">
-        <p class="section-title">Registry</p>
-        <p class="section-headline">Coming Soon!</p>
-        <p class="section-sub-headline">
-          We plan to use a service whichs allows others to gift support toward
-          our honeymoon/travel goals. You'd be gifting specific items/events
-          along the trip.
-        </p>
-        <p class="section-text">We will set this all up ASAP. Thank you.</p>
+        <p class="section-title">REGISTRY</p>
+        <p class="section-headline">Coming Soon</p>
 
         <div class="background"></div>
       </div>
@@ -190,5 +177,46 @@
     <script src="scripts.js"></script>
 
     <script></script>
+
+    <div class="modal-backdrop"></div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <p class="section-headline">The Tillary Hotel</p>
+        <p class="section-sub-headline"></p>
+        <p>
+          <a
+            class="address"
+            href="https://goo.gl/maps/nq1SE5MWwBo"
+            target="__blank"
+          >
+            85 Flatbush Ave Ext
+          </a>
+        </p>
+        <p>
+          <a
+            class="address"
+            href="https://goo.gl/maps/nq1SE5MWwBo"
+            target="__blank"
+          >
+            Brooklyn, NY 11201
+          </a>
+        </p>
+        <p class="section-text">
+          We have a block of rooms at The Tillary Hotel. You may book online or
+          by phone.
+        </p>
+        <p class="section-text">
+          BY PHONE: Call (718) 329-9537 using the group name "Bailey Madden
+          Wedding"
+        </p>
+
+        <p class="section-text">
+          ONLINE: Click this link to visit The Tillary website. Choose check in
+          and check out dates between June 6 and 9. Click "Have a Group Code?"
+          and enter XXX Submit the form to book a room
+        </p>
+      </div>
+    </div>
   </body>
 </html>
