@@ -411,9 +411,7 @@ body {
   .navigation {
     display: none;
   }
-  .hero {
-    background-size: contain;
-  }
+
   .our-logo-which-includes-date {
     background-repeat: no-repeat;
     background-attachment: unset;
@@ -422,9 +420,7 @@ body {
     position: absolute;
     top: 10px;
   }
-  .hero {
-    display: none;
-  }
+
   .our-logo-which-includes-date-white {
     display: none;
   }
