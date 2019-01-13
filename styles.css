@@ -413,9 +413,7 @@ body {
   }
   .hero {
     background-attachment: scroll;
-    background-size: 100%;
   }
-
   .our-logo-which-includes-date {
     background-repeat: no-repeat;
     background-attachment: unset;
