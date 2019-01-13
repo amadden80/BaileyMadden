@@ -196,7 +196,7 @@ window.onload = function() {
       document.getElementById(changeId).style.backgroundPositionX = "center";
       document.getElementById(changeId).style.backgroundPositionY = "top";
       document.getElementById(changeId).style.backgroundSize = "cover";
-      document.getElementById(changeId).style.height = "height: 100%";
+      document.getElementById(changeId).style.height = "100%";
       document.getElementById(changeId).style.opacity = 1;
       document.getElementById(leaveId).style.opacity = 0;
     }, 5000);
