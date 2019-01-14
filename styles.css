@@ -504,6 +504,7 @@ body {
 }
 
 .modal {
+  padding: 5vh;
   margin-left: 15vw;
   margin-top: 15vh;
   width: 70vw;
@@ -525,7 +526,6 @@ body {
 
 .modal p {
   margin: 0;
-  padding: 25px;
 }
 
 .modal-content {
@@ -535,4 +535,23 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.line {
+  border-bottom: 1px solid grey;
+  width: 50vw;
+}
+
+.booking-path {
+  font-weight: bold;
+  padding-bottom: 10px;
+  letter-spacing: 0.25em;
+}
+
+.modal .section-text {
+  font-size: 1.25em;
+}
+
+.bold {
+  font-weight: bold;
 }

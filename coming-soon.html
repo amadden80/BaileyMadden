@@ -68,7 +68,7 @@
         <a
           class="map-it"
           href="https://goo.gl/maps/mzxd7fSbo9y"
-          target="__blank"
+          target="_blank"
         >
           <p>MAP IT</p>
         </a>
@@ -111,14 +111,14 @@
             <a
               class="travel-link"
               href="https://www.thetillaryhotel.com/"
-              target="__blank"
+              target="_blank"
             >
               <p>BOOK</p>
             </a>
             <a
               class="travel-link"
               href="https://www.airbnb.com/s/Brooklyn--NY--United-States/home?checkin=2019-06-06&checkout=2019-06-09&adults=2"
-              target="__blank"
+              target="_blank"
             >
               <p>SEARCH</p>
             </a>
@@ -163,9 +163,9 @@
             <div class="picture-modal-container">
               <span id="close-picture-viewer">&times;</span>
               <div class="flex">
-                <span id="picture-left" class="picture-left-right"><</span>
-                <img id="picture-viewer-content" />
-                <span id="picture-right" class="picture-left-right">></span>
+                <span id="picture-left" class="picture-left-right"></span> <img
+                id="picture-viewer-content" src "" />
+                <span id="picture-right" class="picture-left-right"></span>
               </div>
               <div id="picture-caption"></div>
             </div>
@@ -183,39 +183,53 @@
     <div class="modal">
       <div class="modal-content">
         <p class="section-headline">The Tillary Hotel</p>
-        <p class="section-sub-headline"></p>
-        <p>
-          <a
-            class="address"
-            href="https://goo.gl/maps/nq1SE5MWwBo"
-            target="__blank"
-          >
-            85 Flatbush Ave Ext
-          </a>
-        </p>
-        <p>
-          <a
-            class="address"
-            href="https://goo.gl/maps/nq1SE5MWwBo"
-            target="__blank"
-          >
-            Brooklyn, NY 11201
-          </a>
-        </p>
+
+        <div>
+          <p class="section-text">
+            <a
+              class="address"
+              href="https://goo.gl/maps/nq1SE5MWwBo"
+              target="_blank"
+            >
+              85 Flatbush Ave Ext
+            </a>
+          </p>
+          <p class="section-text">
+            <a
+              class="address"
+              href="https://goo.gl/maps/nq1SE5MWwBo"
+              target="_blank"
+            >
+              Brooklyn, NY 11201
+            </a>
+          </p>
+        </div>
+
+        <p class="line"></p>
+
         <p class="section-text">
           We have a block of rooms at The Tillary Hotel. You may book online or
           by phone.
         </p>
-        <p class="section-text">
-          BY PHONE: Call (718) 329-9537 using the group name "Bailey Madden
-          Wedding"
-        </p>
 
-        <p class="section-text">
-          ONLINE: Click this link to visit The Tillary website. Choose check in
-          and check out dates between June 6 and 9. Click "Have a Group Code?"
-          and enter XXX Submit the form to book a room
-        </p>
+        <p class="line"></p>
+
+        <div>
+          <p class="section-text booking-path">BY PHONE</p>
+          <p class="section-text">
+            Call (718) 329-9537 using the group name
+            <span class="bold">"Bailey Madden Wedding"</span>
+          </p>
+        </div>
+
+        <div>
+          <p class="section-text booking-path">ONLINE</p>
+          <p class="section-text">
+            Click this link to visit The Tillary website. Choose check in and
+            check out dates between June 6 and 9. Click "Have a Group Code?" and
+            enter XXX Submit the form to book a room
+          </p>
+        </div>
       </div>
     </div>
   </body>
