@@ -201,6 +201,10 @@ body {
   line-height: 1.25em;
 }
 
+.lodging .section-text {
+  min-height: 150px;
+}
+
 .lodging-item {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
