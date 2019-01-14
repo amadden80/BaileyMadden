@@ -502,7 +502,7 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .line {
@@ -618,7 +618,11 @@ a:hover {
 }
 
 .hoods div {
-  width: 300px;
+  width: 250px;
+}
+
+.hoods .hood-description {
+  font-size: 0.85em;
 }
 
 .section-text.neighborhood-guide {

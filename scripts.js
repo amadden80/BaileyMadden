@@ -138,11 +138,11 @@ window.onload = function() {
     setModalOff();
   });
 
-  document.body
-    .querySelector(".modal-close")
-    .addEventListener("click", function() {
+  document.body.querySelectorAll(".modal-close").forEach(function(node) {
+    node.addEventListener("click", function() {
       setModalOff();
     });
+  });
 
   document.body
     .querySelector(".hotel-book")
