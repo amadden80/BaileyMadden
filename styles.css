@@ -369,31 +369,6 @@ body {
   opacity: 0.7;
 }
 
-.picture-modal {
-  display: none;
-  position: fixed;
-  z-index: 20;
-
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: #3a4356;
-}
-
-.picture-modal-container {
-  padding: 8px;
-}
-
-.picture-modal-container-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #picture-viewer-content {
   margin: auto;
   display: block;
@@ -447,10 +422,72 @@ body {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
+.modal-backdrop {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #3b4559;
+  opacity: 0.65;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  padding: 5vh;
+  margin-left: 15vw;
+  margin-top: 15vh;
+  width: 70vw;
+  height: 70vh;
+  max-height: 700px;
+  z-index: 101;
+  background-color: #3b4559;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.modal .address {
+  text-decoration: none;
+  color: black;
+}
+
+.modal p {
+  margin: 0;
+}
+
+.modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: scroll;
+}
+
+.line {
+  border-bottom: 1px solid grey;
+  width: 50vw;
+}
+
+.booking-path {
+  font-weight: bold;
+  padding-bottom: 10px;
+  letter-spacing: 0.25em;
+}
+
+.modal .section-text {
+  font-size: 1.25em;
+}
+
+.bold {
+  font-weight: bolder;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -460,6 +497,17 @@ body {
 }
 
 @media only screen and (max-width: 1400px) {
+  .modal {
+    padding: unset;
+    margin-left: 0vw;
+    margin-top: 0vh;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .modal .section-headline {
+    font-size: 2.5em;
+  }
   .lodging .background {
     background: unset;
   }
@@ -487,71 +535,4 @@ body {
   .remove-fillvh {
     height: unset;
   }
-}
-
-.modal-backdrop {
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  background-color: #3b4559;
-  opacity: 0.65;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  padding: 5vh;
-  margin-left: 15vw;
-  margin-top: 15vh;
-  width: 70vw;
-  height: 70vh;
-  z-index: 101;
-  background-color: #3b4559;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}
-.modal .address {
-  text-decoration: none;
-  color: black;
-}
-
-.modal p {
-  margin: 0;
-}
-
-.modal-content {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.line {
-  border-bottom: 1px solid grey;
-  width: 50vw;
-}
-
-.booking-path {
-  font-weight: bold;
-  padding-bottom: 10px;
-  letter-spacing: 0.25em;
-}
-
-.modal .section-text {
-  font-size: 1.25em;
-}
-
-.bold {
-  font-weight: bold;
 }
