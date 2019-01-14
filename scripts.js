@@ -212,24 +212,21 @@ window.onload = function() {
 
   setTimeout(function() {
     setInterval(function() {
-      transitionNumber++;
+      if (document.body.clientWidth > 1400) {
+        transitionNumber++;
 
-      var leaveId = !(transitionNumber % 2) ? "hero-even" : "hero-odd";
-      var changeId = transitionNumber % 2 ? "hero-even" : "hero-odd";
+        var leaveId = !(transitionNumber % 2) ? "hero-even" : "hero-odd";
+        var changeId = transitionNumber % 2 ? "hero-even" : "hero-odd";
 
-      currentHeroIdx++;
-      currentHeroIdx = currentHeroIdx % imgs.length;
+        currentHeroIdx++;
+        currentHeroIdx = currentHeroIdx % imgs.length;
+        document.getElementById(changeId).style.background =
+          "url(" + imgs[currentHeroIdx].src + ") no-repeat fixed center top";
+        document.getElementById(changeId).style.backgroundSize = "cover";
 
-      document.getElementById(changeId).style.background =
-        "url(" + imgs[currentHeroIdx].src + ")";
-      document.getElementById(changeId).style.backgroundRepeat = "no-repeat";
-      document.getElementById(changeId).style.backgroundAttachment = "fixed";
-      document.getElementById(changeId).style.backgroundPositionX = "center";
-      document.getElementById(changeId).style.backgroundPositionX = "top";
-      document.getElementById(changeId).style.backgroundSize = "cover";
-      document.getElementById(changeId).style.height = "100vh";
-      document.getElementById(changeId).style.opacity = 1;
-      document.getElementById(leaveId).style.opacity = 0;
+        document.getElementById(changeId).style.opacity = 1;
+        document.getElementById(leaveId).style.opacity = 0;
+      }
     }, 5000);
   }, 1000);
 };

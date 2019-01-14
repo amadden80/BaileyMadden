@@ -239,7 +239,7 @@ a:hover {
 }
 
 .where .background {
-  background: url("./images/background-weylin-doodle-wedding-yay.png");
+  /* background: url("./images/background-weylin-doodle-wedding-yay.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 95%;
@@ -249,7 +249,7 @@ a:hover {
   width: 100%;
   height: 100%;
   z-index: 4;
-  opacity: 0.5;
+  opacity: 0.5; */
 }
 
 .lodging .background {
