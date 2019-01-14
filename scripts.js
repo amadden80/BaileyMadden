@@ -104,7 +104,38 @@ var discoverTab = function(dot) {
   }
 };
 
+var setModalOn = function() {
+  document.querySelector(".modal").style.display = "flex";
+  document.querySelector(".modal-backdrop").style.display = "flex";
+};
+
+var setModalOff = function() {
+  document.querySelector(".modal").style.display = "none";
+  document.querySelector(".modal-backdrop").style.display = "none";
+};
+
 window.onload = function() {
+  document.body.querySelector(".modal").addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+
+  document.body.addEventListener("click", function() {
+    setModalOff();
+  });
+
+  document.body
+    .querySelector(".modal-close")
+    .addEventListener("click", function() {
+      setModalOff();
+    });
+
+  document.body
+    .querySelector(".hotel-book")
+    .addEventListener("click", function(e) {
+      e.stopPropagation();
+      setModalOn();
+    });
+
   var dot = document.body.querySelector(".navigation .dot");
 
   setLocationHandlers();

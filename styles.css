@@ -97,6 +97,7 @@ body {
 .lodging-options div {
   flex: 1;
   flex-wrap: wrap;
+  padding-bottom: 16px;
 }
 
 .lodging-options .flex-column {
@@ -405,23 +406,6 @@ body {
   }
 }
 
-#close-picture-viewer {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-#close-picture-viewer:hover,
-#close-picture-viewer:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .modal-backdrop {
   width: 100vw;
   height: 100vh;
@@ -434,6 +418,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-close {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
 }
 
 .modal {
@@ -535,4 +526,11 @@ body {
   .remove-fillvh {
     height: unset;
   }
+}
+
+.modal-backdrop {
+  display: none;
+}
+.modal {
+  display: none;
 }
