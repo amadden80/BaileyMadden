@@ -108,8 +108,6 @@ var setBookModalOn = function() {
   document.querySelector(".modal-book").style.display = "flex";
   document.querySelector(".modal-neighborhood").style.display = "none";
   document.querySelector(".modal-backdrop").style.display = "flex";
-  document.querySelector(".modal-content-neighborhood-gude").style.display =
-    "none";
 };
 
 var setNeighborhoodGuidebModalOn = function() {
