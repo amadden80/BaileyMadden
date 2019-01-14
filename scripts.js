@@ -104,20 +104,37 @@ var discoverTab = function(dot) {
   }
 };
 
-var setModalOn = function() {
-  document.querySelector(".modal").style.display = "flex";
+var setBookModalOn = function() {
+  document.querySelector(".modal-book").style.display = "flex";
+  document.querySelector(".modal-neighborhood").style.display = "none";
+  document.querySelector(".modal-backdrop").style.display = "flex";
+  document.querySelector(".modal-content-neighborhood-gude").style.display =
+    "none";
+};
+
+var setNeighborhoodGuidebModalOn = function() {
+  document.querySelector(".modal-book").style.display = "none";
+  document.querySelector(".modal-neighborhood").style.display = "flex";
   document.querySelector(".modal-backdrop").style.display = "flex";
 };
 
 var setModalOff = function() {
-  document.querySelector(".modal").style.display = "none";
+  document.querySelector(".modal-book").style.display = "none";
+  document.querySelector(".modal-neighborhood").style.display = "none";
   document.querySelector(".modal-backdrop").style.display = "none";
 };
 
 window.onload = function() {
-  document.body.querySelector(".modal").addEventListener("click", function(e) {
-    e.stopPropagation();
-  });
+  document.body
+    .querySelector(".modal-neighborhood")
+    .addEventListener("click", function(e) {
+      e.stopPropagation();
+    });
+  document.body
+    .querySelector(".modal-book")
+    .addEventListener("click", function(e) {
+      e.stopPropagation();
+    });
 
   document.body.addEventListener("click", function() {
     setModalOff();
@@ -133,7 +150,14 @@ window.onload = function() {
     .querySelector(".hotel-book")
     .addEventListener("click", function(e) {
       e.stopPropagation();
-      setModalOn();
+      setBookModalOn();
+    });
+
+  document.body
+    .querySelector(".neighborhood-guide")
+    .addEventListener("click", function(e) {
+      e.stopPropagation();
+      setNeighborhoodGuidebModalOn();
     });
 
   var dot = document.body.querySelector(".navigation .dot");
@@ -180,16 +204,6 @@ window.onload = function() {
     document.getElementById("picture-caption").innerHTML = img.alt;
   }
 
-  document.getElementById("picture-left").addEventListener("click", function() {
-    loadImage(currentImageIdx - 1);
-  });
-
-  document
-    .getElementById("picture-right")
-    .addEventListener("click", function() {
-      loadImage(currentImageIdx + 1);
-    });
-
   for (var index = 0; index < imgs.length; index++) {
     (function() {
       var idx = index;
@@ -199,12 +213,6 @@ window.onload = function() {
       });
     })();
   }
-
-  document
-    .getElementById("close-picture-viewer")
-    .addEventListener("click", function() {
-      document.getElementById("picture-viewer").style.display = "none";
-    });
 
   var imgs = Array.from(document.getElementsByClassName("selectable-image"));
   var currentHeroIdx = 0;

@@ -18,7 +18,10 @@ a:hover {
   text-decoration: underline;
 }
 
-.modal a {
+.modal-neighborhood a {
+  color: black;
+}
+.modal-book a {
   color: black;
 }
 
@@ -446,7 +449,24 @@ a:hover {
   cursor: pointer;
 }
 
-.modal {
+.modal-neighborhood {
+  padding: 5vh;
+  margin-left: 15vw;
+  margin-top: 5vh;
+  width: 70vw;
+  height: 85vh;
+  max-height: 700px;
+  z-index: 101;
+  background-color: #3b4559;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.modal-book {
   padding: 5vh;
   margin-left: 15vw;
   margin-top: 15vh;
@@ -463,12 +483,16 @@ a:hover {
   align-items: center;
   background-color: white;
 }
-.modal .address {
+
+.modal-book .address {
   text-decoration: none;
   color: black;
 }
 
-.modal p {
+.modal-book p {
+  margin: 0;
+}
+.modal-neighborhood p {
   margin: 0;
 }
 
@@ -492,12 +516,19 @@ a:hover {
   letter-spacing: 0.25em;
 }
 
-.modal .section-text {
+.modal-book .section-text {
+  font-size: 1.25em;
+}
+.modal-neighborhoods .section-text {
   font-size: 1.25em;
 }
 
 .bold {
   font-weight: bolder;
+}
+
+.neighborhood-guide-map {
+  width: 25vw;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -507,7 +538,14 @@ a:hover {
 }
 
 @media only screen and (max-width: 1400px) {
-  .modal {
+  .modal-book {
+    padding: unset;
+    margin-left: 0vw;
+    margin-top: 0vh;
+    width: 100vw;
+    height: 100vh;
+  }
+  .modal-neighborhood {
     padding: unset;
     margin-left: 0vw;
     margin-top: 0vh;
@@ -515,7 +553,10 @@ a:hover {
     height: 100vh;
   }
 
-  .modal .section-headline {
+  .modal-book .section-headline {
+    font-size: 2.5em;
+  }
+  .modal-neighborhood .section-headline {
     font-size: 2.5em;
   }
   .lodging .background {
@@ -550,6 +591,40 @@ a:hover {
 .modal-backdrop {
   display: none;
 }
-.modal {
+.modal-neighborhood {
+  /* display: none; */
+}
+
+.modal-book {
   display: none;
+}
+
+.hood-number {
+  margin-top: 8px;
+
+  font-size: 2em;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+}
+.hood-name {
+  font-weight: bold;
+}
+
+.hoods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 24px;
+}
+
+.hoods div {
+  width: 300px;
+}
+
+.section-text.neighborhood-guide {
+  text-align: left;
+}
+
+.section-headline.neighborhood-guide {
+  font-size: 2.5em;
 }
