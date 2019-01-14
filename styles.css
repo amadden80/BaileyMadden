@@ -9,6 +9,12 @@ body {
   position: relative;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 .navigation {
   background-color: white;
   font-size: 0.7em;
