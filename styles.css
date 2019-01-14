@@ -215,7 +215,7 @@ a:hover {
 }
 
 .lodging .section-text {
-  min-height: 150px;
+  min-height: 110px;
 }
 
 .lodging-item {
@@ -271,6 +271,7 @@ a:hover {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   margin-top: 10px;
+  font-size: 0.75em;
   z-index: 20;
   letter-spacing: 0.5em;
   text-align: center;
@@ -307,6 +308,7 @@ a:hover {
   margin-top: 10px;
   z-index: 20;
   letter-spacing: 0.5em;
+  font-size: 0.75em;
   margin-left: 0.3em;
   text-align: center;
   cursor: pointer;
