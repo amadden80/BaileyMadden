@@ -106,7 +106,7 @@ a:hover {
 .where .section-text {
   width: 75vw;
 }
-s .neighborhood-guide-description {
+.neighborhood-guide-description {
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -186,6 +186,47 @@ s .neighborhood-guide-description {
   padding: 15px;
   color: #f1f1f1;
   z-index: 20;
+}
+
+.stage .credits {
+  background-color: #f09491;
+  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 1%;
+  color: white;
+}
+.stage .credits .section-title {
+  text-align: right;
+}
+.stage .credits .section-text {
+  max-width: unset;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.stage .with-love {
+  background-color: #fb5373;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1%;
+  color: white;
+}
+.stage .with-love .section-sub-headline {
+  text-align: right;
+}
+.stage .with-love .section-text {
+  max-width: unset;
+  font-style: italic;
+  font-weight: 300;
+  padding: 0 1em;
+}
+.stage .with-love .heart {
+  color: white;
+  font-size: 2em;
+  margin: 0;
 }
 
 .section-title {
@@ -567,6 +608,14 @@ s .neighborhood-guide-description {
   flex-direction: column;
 }
 
+.stage .credits {
+  display: none;
+}
+
+.stage .with-love {
+  display: none;
+}
+
 @media only screen and (max-width: 1000px) {
   .lodging-options {
     flex-direction: column;
@@ -574,6 +623,17 @@ s .neighborhood-guide-description {
   .lodging-options .column {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+  .stage .credits {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-content: center;
+  }
+  .stage .credits .section-title {
+    text-align: center;
+  }
+  .stage .credits .contact {
+    padding-bottom: 5em;
   }
 }
 

@@ -255,3 +255,21 @@ window.onload = function() {
     }, 5000);
   }, 1000);
 };
+
+var creditsDisplayed = false;
+var loveDisplayed = false;
+window.addEventListener("scroll", function(event) {
+  if (!loveDisplayed) {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+      setTimeout(function() {
+        if (!creditsDisplayed) {
+          creditsDisplayed = true;
+          document.querySelector(".credits").style.display = "flex";
+        } else {
+          loveDisplayed = true;
+          document.querySelector(".with-love").style.display = "flex";
+        }
+      }, 1000);
+    }
+  }
+});
