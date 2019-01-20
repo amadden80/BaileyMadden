@@ -124,7 +124,7 @@ a:hover {
   width: 100%;
   display: flex;
   align-content: center;
-
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -429,8 +429,10 @@ a:hover {
 }
 
 .modal-backdrop {
-  width: 100vw;
-  height: 100vh;
+  overflow: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
   z-index: 100;
   background-color: #3b4559;
   opacity: 0.65;
@@ -450,11 +452,13 @@ a:hover {
 }
 
 .modal-neighborhood {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   padding: 5vh;
   margin-left: 15vw;
   margin-top: 5vh;
   width: 70vw;
-  height: 85vh;
+  height: 70vh;
   max-height: 700px;
   z-index: 101;
   background-color: #3b4559;
@@ -472,7 +476,6 @@ a:hover {
   margin-top: 15vh;
   width: 70vw;
   height: 70vh;
-  max-height: 700px;
   z-index: 101;
   background-color: #3b4559;
   position: fixed;
@@ -498,6 +501,7 @@ a:hover {
 
 .modal-content {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -530,6 +534,12 @@ a:hover {
 .neighborhood-guide-map {
   width: 25vw;
 }
+.map-container {
+  /* width: 25%; */
+}
+.hoods-container {
+  width: 600px;
+}
 
 @media only screen and (max-width: 1000px) {
   .lodging-options {
@@ -537,20 +547,32 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
+  .map-container {
+    width: 100%;
+  }
+  .hoods-container {
+    width: 100%;
+  }
+
+  .neighborhood-guide-map {
+    width: 75vw;
+    padding-top: 10px;
+  }
   .modal-book {
     padding: unset;
     margin-left: 0vw;
     margin-top: 0vh;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
   .modal-neighborhood {
+    flex-wrap: wrap;
     padding: unset;
-    margin-left: 0vw;
-    margin-top: 0vh;
-    width: 100vw;
-    height: 100vh;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 500%;
   }
 
   .modal-book .section-headline {
@@ -590,6 +612,7 @@ a:hover {
 
 .modal-backdrop {
   display: none;
+  overflow: hidden;
 }
 .modal-neighborhood {
   display: none;

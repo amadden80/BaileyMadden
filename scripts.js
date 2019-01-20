@@ -105,18 +105,21 @@ var discoverTab = function(dot) {
 };
 
 var setBookModalOn = function() {
+  document.querySelector("body").style.overflow = "hidden";
   document.querySelector(".modal-book").style.display = "flex";
   document.querySelector(".modal-neighborhood").style.display = "none";
   document.querySelector(".modal-backdrop").style.display = "flex";
 };
 
 var setNeighborhoodGuidebModalOn = function() {
+  document.querySelector("body").style.overflow = "hidden";
   document.querySelector(".modal-book").style.display = "none";
   document.querySelector(".modal-neighborhood").style.display = "flex";
   document.querySelector(".modal-backdrop").style.display = "flex";
 };
 
 var setModalOff = function() {
+  document.querySelector("body").style.overflow = "auto";
   document.querySelector(".modal-book").style.display = "none";
   document.querySelector(".modal-neighborhood").style.display = "none";
   document.querySelector(".modal-backdrop").style.display = "none";
