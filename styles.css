@@ -223,10 +223,15 @@ a:hover {
   font-weight: 300;
   padding: 0 1em;
 }
+
 .stage .with-love .heart {
   color: white;
-  font-size: 2em;
+  height: 18px;
+  width: 22px;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .section-title {
@@ -613,11 +618,21 @@ a:hover {
   display: none;
 }
 
+.stage .credits .question {
+  padding-right: 25px;
+}
+.stage .credits .section-title {
+  font-size: 1em;
+}
+
 .stage .with-love {
   display: none;
 }
 
 @media only screen and (max-width: 1000px) {
+  .stage .credits .question {
+    padding-right: unset;
+  }
   .lodging-options {
     flex-direction: column;
   }
