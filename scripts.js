@@ -104,7 +104,9 @@ var discoverTab = function(dot) {
   }
 };
 
+var isOpen = false;
 var setBookModalOn = function() {
+  isOpen = true;
   document.querySelector("body").style.overflow = "hidden";
   document.querySelector("body").style.position = "fixed";
   document.querySelector(".modal-book").style.display = "flex";
@@ -113,6 +115,7 @@ var setBookModalOn = function() {
 };
 
 var setNeighborhoodGuidebModalOn = function() {
+  isOpen = true;
   document.querySelector("body").style.overflow = "hidden";
   document.querySelector("body").style.position = "fixed";
   document.querySelector(".modal-book").style.display = "none";
@@ -121,15 +124,16 @@ var setNeighborhoodGuidebModalOn = function() {
 };
 
 var setModalOff = function() {
-  var sectionEl = document.body.querySelector(`.stage .lodging`);
-  var secRect = getTopBottom(sectionEl);
-  setTimeout(function() {
-    window.scrollTo({
-      top: window.scrollY + secRect.top,
-      left: 0
-      // behavior: "smooth"
-    });
-  }, 0);
+  if (isOpen) {
+    var sectionEl = document.body.querySelector(`.stage .lodging`);
+    var secRect = getTopBottom(sectionEl);
+    setTimeout(function() {
+      window.scrollTo({
+        top: window.scrollY + secRect.top,
+        left: 0
+      });
+    }, 0);
+  }
   document.querySelector("body").style.overflow = "scroll";
   document.querySelector("body").style.position = "unset";
   document.querySelector(".modal-book").style.display = "none";
