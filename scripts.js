@@ -106,6 +106,7 @@ var discoverTab = function(dot) {
 
 var setBookModalOn = function() {
   document.querySelector("body").style.overflow = "hidden";
+  document.querySelector("body").style.position = "fixed";
   document.querySelector(".modal-book").style.display = "flex";
   document.querySelector(".modal-neighborhood").style.display = "none";
   document.querySelector(".modal-backdrop").style.display = "flex";
@@ -113,13 +114,24 @@ var setBookModalOn = function() {
 
 var setNeighborhoodGuidebModalOn = function() {
   document.querySelector("body").style.overflow = "hidden";
+  document.querySelector("body").style.position = "fixed";
   document.querySelector(".modal-book").style.display = "none";
   document.querySelector(".modal-neighborhood").style.display = "flex";
   document.querySelector(".modal-backdrop").style.display = "flex";
 };
 
 var setModalOff = function() {
-  document.querySelector("body").style.overflow = "auto";
+  var sectionEl = document.body.querySelector(`.stage .lodging`);
+  var secRect = getTopBottom(sectionEl);
+  setTimeout(function() {
+    window.scrollTo({
+      top: window.scrollY + secRect.top,
+      left: 0
+      // behavior: "smooth"
+    });
+  }, 0);
+  document.querySelector("body").style.overflow = "scroll";
+  document.querySelector("body").style.position = "unset";
   document.querySelector(".modal-book").style.display = "none";
   document.querySelector(".modal-neighborhood").style.display = "none";
   document.querySelector(".modal-backdrop").style.display = "none";
