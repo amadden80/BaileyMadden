@@ -226,12 +226,14 @@ a:hover {
 
 .stage .with-love .heart {
   color: white;
-  height: 18px;
-  width: 22px;
+
   margin: 0;
   display: flex;
   justify-content: center;
   align-content: center;
+}
+.stage .with-love .heart img {
+  height: 18px;
 }
 
 .section-title {
@@ -353,6 +355,7 @@ a:hover {
   justify-content: center;
 }
 .lodging-image img {
+  border-radius: 50%;
   width: 200px;
   height: 200px;
 }
