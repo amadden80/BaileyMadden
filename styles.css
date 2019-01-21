@@ -106,10 +106,6 @@ a:hover {
 .where .section-text {
   width: 75vw;
 }
-.neighborhood-guide-description {
-  padding-left: 25px;
-  padding-right: 25px;
-}
 
 .lodging-options {
   padding-top: 5vh;
@@ -156,7 +152,7 @@ a:hover {
 }
 
 .welcome .background {
-  background: url("./images/background-inspired-by-wallpaper.png");
+  background: url("https://res.cloudinary.com/baileymadden/image/upload/c_scale,q_50,w_2000/v1548081790/background-inspired-by-wallpaper.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -295,26 +291,7 @@ a:hover {
   line-height: 1em;
 }
 
-.where .background {
-  /* background: url("./images/background-weylin-doodle-wedding-yay.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 95%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-  opacity: 0.5; */
-}
-
 .lodging .background {
-  /* background: url("./images/a-simple-map-of-nyc.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%; */
-
   position: absolute;
   top: 0px;
   left: 0px;
@@ -404,7 +381,7 @@ a:hover {
 }
 
 .our-logo-which-includes-date {
-  background: url("./images/our-logo-which-includes-date.png");
+  background: url("https://res.cloudinary.com/baileymadden/image/upload/q_80/v1548081787/our-logo-which-includes-date.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -415,7 +392,7 @@ a:hover {
 }
 
 .our-logo-which-includes-date-white {
-  background: url("./images/our-logo-which-includes-date-white.png");
+  background: url("https://res.cloudinary.com/baileymadden/image/upload/q_80/v1548081787/our-logo-which-includes-date-white.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -426,7 +403,7 @@ a:hover {
 }
 
 .hero {
-  background: url("./images/standing-in-the-street.jpg");
+  background: url("https://res.cloudinary.com/baileymadden/image/upload/c_scale,q_80,w_2000/v1548081796/standing-in-the-street.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: center;
