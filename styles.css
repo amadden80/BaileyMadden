@@ -688,9 +688,11 @@ a:hover {
 
 .faq .question {
   text-align: left;
-  
+  margin:auto;
   font-weight: 700;
   color: #3a4356;
+  max-width: 400px;
+  margin-bottom: 5px;
 }
 
 .faq .address {
@@ -698,9 +700,12 @@ a:hover {
 }
 
 .faq .answer {
+  margin:auto;
   font-size: 0.85em;
   text-align: left;
   color: #3a4356;
+  max-width: 400px;
+  margin-bottom: 25px;
 }
 
 .faq-list {
@@ -711,13 +716,14 @@ a:hover {
 }
 
 .faq-list div{
-  width: 500px
+  width: 50%
 }
 
 @media only screen and (max-width: 1200px) {
 
   .faq-list div{
     max-width: 400px;
+    width: unset;
   }
 
   .frame {
