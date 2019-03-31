@@ -46,14 +46,8 @@ var isVisable = function(el) {
 window.pauseLocationScanning = false;
 window.currentSection = null;
 
-function setLocationHandlers() {
-  [".welcome", ".where", ".lodging", ".registry", '.faq'].forEach(function(section) {
-    (function() {
-      var nav = document.body.querySelector(`.navigation ${section}`);
-      var sectionScoped = section;
-      nav.addEventListener("click", function(e) {
-        window.pauseLocationScanning = true;
-        var sectionEl = document.body.querySelector(`.stage ${sectionScoped}`);
+function scrollTooClass (sectionScoped) {
+  var sectionEl = document.body.querySelector(`.stage ${sectionScoped}`);
         var secRect = getTopBottom(sectionEl);
 
         setTimeout(function() {
@@ -67,6 +61,17 @@ function setLocationHandlers() {
         setTimeout(() => {
           window.pauseLocationScanning = false;
         }, 500);
+};
+
+
+function setLocationHandlers() {
+  [".welcome", ".where", ".lodging", ".registry", '.faq'].forEach(function(section) {
+    (function() {
+      var nav = document.body.querySelector(`.navigation ${section}`);
+      var sectionScoped = section;
+      nav.addEventListener("click", function(e) {
+        window.pauseLocationScanning = true;
+        scrollTooClass(sectionScoped);
       });
     })();
   });
@@ -163,6 +168,12 @@ window.onload = function() {
       setModalOff();
     });
   });
+
+  document.body.querySelector('.click-lodging')
+    .addEventListener("click", function(e){
+      e.stopPropagation();
+      scrollTooClass(".lodging");
+    })
 
   document.body
     .querySelector(".hotel-book")

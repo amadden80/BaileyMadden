@@ -708,6 +708,14 @@ a:hover {
   margin-bottom: 25px;
 }
 
+.click-lodging {
+  cursor: pointer;
+  font-weight: 700;
+}
+.click-lodging:hover {
+  text-decoration: underline;
+}
+
 .faq-list {
   max-width: unset;
   display: flex;
