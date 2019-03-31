@@ -723,6 +723,10 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.faq .section-title {
+  padding-top: 2.5em;
+}
+
 .faq-list div{
   width: 50%
 }
