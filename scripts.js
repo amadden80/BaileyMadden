@@ -47,7 +47,7 @@ window.pauseLocationScanning = false;
 window.currentSection = null;
 
 function setLocationHandlers() {
-  [".welcome", ".where", ".lodging", ".registry"].forEach(function(section) {
+  [".welcome", ".where", ".lodging", ".registry", '.faq'].forEach(function(section) {
     (function() {
       var nav = document.body.querySelector(`.navigation ${section}`);
       var sectionScoped = section;
@@ -78,7 +78,8 @@ var discoverTab = function(dot) {
     ".image",
     ".lodging",
     ".where",
-    ".registry"
+    ".registry",
+    ".faq"
   ].map(function(section) {
     return {
       nav: document.body.querySelector(`.navigation ${section}`),

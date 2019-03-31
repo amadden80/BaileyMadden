@@ -18,6 +18,11 @@ a:hover {
   text-decoration: underline;
 }
 
+.wanderable {
+  color: #3b4559
+}
+
+
 .modal-neighborhood a {
   color: black;
 }
@@ -106,6 +111,9 @@ a:hover {
 .where .section-text {
   width: 75vw;
 }
+.registry .section-text {
+  width: 75vw;
+}
 
 .lodging-options {
   padding-top: 5vh;
@@ -171,6 +179,25 @@ a:hover {
 }
 
 .stage .where p {
+  margin: 0;
+  padding: 15px;
+  color: #3b4559;
+  z-index: 20;
+}
+
+
+
+.stage .faq {
+  background-color: #f8c1b8;
+  justify-content: center;
+}
+
+.stage .registry {
+  background-color: #dce3e3;
+  justify-content: center;
+}
+
+.stage .registry p {
   margin: 0;
   padding: 15px;
   color: #3b4559;
@@ -326,6 +353,31 @@ a:hover {
   color: #f8bf9c;
 }
 
+.registry .view-registry {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 0.75em;
+  z-index: 20;
+  letter-spacing: 0.5em;
+  text-align: center;
+  margin-left: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.registry .view-registry p {
+  border: 1px solid #3b4559;
+  font-weight: bold;
+  margin-right: -0.5em;
+}
+
+.registry .view-registry:hover p {
+  background-color: white;
+  border: 1px solid white;
+  /* color: #dce3e3; */
+}
+
 .lodging-image {
   flex: 1;
   display: flex;
@@ -369,11 +421,7 @@ a:hover {
   position: relative;
 }
 
-.registry {
-  background-color: #dce3e3;
-  justify-content: center;
-  color: #3a4356;
-}
+
 
 .images {
   background-color: #3b4559;
@@ -633,7 +681,45 @@ a:hover {
   }
 }
 
+
+.faq {
+  color: #3a4356;
+}
+
+.faq .question {
+  text-align: left;
+  
+  font-weight: 700;
+  color: #3a4356;
+}
+
+.faq .address {
+  color: #3a4356;
+}
+
+.faq .answer {
+  font-size: 0.85em;
+  text-align: left;
+  color: #3a4356;
+}
+
+.faq-list {
+  max-width: unset;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.faq-list div{
+  width: 500px
+}
+
 @media only screen and (max-width: 1200px) {
+
+  .faq-list div{
+    max-width: 400px;
+  }
+
   .frame {
     padding-top: 75px !important;
     padding-bottom: 75px !important;
