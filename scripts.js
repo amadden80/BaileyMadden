@@ -110,6 +110,19 @@ var discoverTab = function(dot) {
   }
 };
 
+var openMenu = function(){
+  document.querySelector(".navigation").style.right="0px";
+  document.querySelector(".navigation-burger").style.top="-100px";
+  document.querySelector(".navigation-backing").style.right="0px";
+  document.querySelector(".stage").style.width="90vw";
+};
+var closeMenu = function(){
+  document.querySelector(".navigation").style.right="-100vw";
+  document.querySelector(".navigation-burger").style.top="0px";
+  document.querySelector(".navigation-backing").style.right="-100vw";
+  document.querySelector(".stage").style.width="100vw";
+};
+
 var isOpen = false;
 var setBookModalOn = function() {
   isOpen = true;
@@ -189,6 +202,20 @@ window.onload = function() {
       setNeighborhoodGuidebModalOn();
     });
 
+  document.body.querySelector(".navigation-burger")
+    .addEventListener("click", function(e) {
+      e.stopPropagation();
+      openMenu();
+    });
+
+
+  document.body
+  .addEventListener("click", function(e) {
+    e.stopPropagation();
+    closeMenu();
+  });
+
+  
   var dot = document.body.querySelector(".navigation .dot");
 
   setLocationHandlers();

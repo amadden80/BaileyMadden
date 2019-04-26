@@ -458,7 +458,7 @@ a:hover {
   background-position-y: top;
   background-size: cover;
   height: 100vh;
-  -webkit-transition: opacity 3s; /* Safari */
+  -webkit-transition: opacity 3s; 
   transition: opacity 3s;
 }
 
@@ -731,10 +731,66 @@ a:hover {
   width: 50%
 }
 
+
+.navigation-burger {
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
 
+  .navigation-burger {
+    display: block;
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    height: 50px;
+    width: 100vw;
+    text-align: center;
+    -webkit-transition: top 1s; 
+    transition: top 1s;
+    background-color: #FEF0EF;
+    font-weight: bolder;
+    letter-spacing: 10px;
+    color: #3a4356;
+  }
+
+  .navigation {
+    position: fixed;
+    right: -100px;
+    top: 0;
+    left: unset;
+    top: 0;
+    z-index: 1002;
+    -webkit-transition: right 1s; 
+    transition: right 1s;
+    height: 80vh;
+  }
+
+  .stage{
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    width: 100vw;
+  }
+  .shrink {
+    width: 90vw;
+  }
+
+  .navigation-backing {
+    background-color: white;
+    position: fixed;
+    right: -100px;
+    top: 0;
+    left: unset;
+    top: 0;
+    z-index: 1001;
+    -webkit-transition: right 1s; 
+    transition: right 1s;
+    height: 100vh;
+    width: 90px;
+  }
+
   .faq-list div{
-    max-width: 400px;
+    max-width: 350px;
     width: unset;
   }
 
@@ -805,9 +861,9 @@ a:hover {
   .stage {
     padding-left: unset;
   }
-  .navigation {
+  /* .navigation {
     display: none;
-  }
+  } */
   .hero {
     background-attachment: scroll;
   }
@@ -879,3 +935,6 @@ a:hover {
 .section-headline.neighborhood-guide {
   font-size: 2.5em;
 }
+
+
+
